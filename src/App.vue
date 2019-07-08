@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <input v-model="message" placeholder="edit me" />
+    <HelloWorld :msg="message" :other="anything" />
   </div>
 </template>
 
@@ -12,6 +12,12 @@ export default {
   name: "app",
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+      anything: true,
+      message: ""
+    };
   }
 };
 </script>
@@ -21,8 +27,8 @@ export default {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  border: 1px solid #f0f;
 }
 </style>
